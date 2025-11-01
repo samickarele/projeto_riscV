@@ -4,7 +4,6 @@ and x3,x1,x2
 add x4,x1,x2
 or x4,x2,x0
 or x3,x1,x2
-xor x9,x1,x2
 sw x3,8(x0)
 sw x4,12(x0)
 lw x5,8(x0)
