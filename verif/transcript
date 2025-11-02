@@ -5,7 +5,7 @@
 # Compile of BranchUnit.sv was successful.
 # Compile of Controller.sv was successful.
 # Compile of datamemory.sv was successful.
-# Compile of Datapath.sv was successful.
+# Compile of Datapath.sv was successful with warnings.
 # Compile of flopr.sv was successful.
 # Compile of ForwardingUnit.sv was successful.
 # Compile of HazardDetection.sv was successful.
@@ -24,7 +24,7 @@
 do runtb_top
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 17:38:30 on Nov 01,2025
+# Start time: 09:43:15 on Nov 02,2025
 # vlog -reportprogress 300 -f compile_verilog 
 # -- Compiling module adder
 # -- Compiling module ramOnChip32
@@ -53,10 +53,10 @@ do runtb_top
 # 
 # Top level modules:
 # 	tb_top
-# End time: 17:38:30 on Nov 01,2025, Elapsed time: 0:00:00
+# End time: 09:43:15 on Nov 02,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -gui -L altera_mf_ver work.tb_top 
-# Start time: 17:38:30 on Nov 01,2025
+# Start time: 09:43:15 on Nov 02,2025
 # Loading sv_std.std
 # Loading work.tb_top
 # Loading work.riscv
@@ -158,22 +158,26 @@ do runtb_top
 # 
 #                   95: Register [ 4] written with value: [00000004] | [         4]
 # 
-#                  105: Memory [  8] written with value: [0000000c] | [        12]
-# 
 #                  105: Register [ 3] written with value: [0000000c] | [        12]
 # 
-#                  115: Memory [ 12] written with value: [00000004] | [         4]
+#                  115: Memory [  8] written with value: [0000000c] | [        12]
 # 
-#                  125: Memory [  8] read with value: [00000004] | [         4]
+#                  115: Register [ 9] written with value: [0000000c] | [        12]
 # 
-#                  125: Memory [  8] read with value: [00000000] | [         0]
+#                  125: Memory [ 12] written with value: [00000004] | [         4]
 # 
-#                  130: Memory [  8] read with value: [0000000c] | [        12]
+#                  135: Memory [ 16] written with value: [0000000c] | [        12]
 # 
-#                  135: Register [ 5] written with value: [0000000c] | [        12]
+#                  145: Memory [  8] read with value: [00000004] | [         4]
+# 
+#                  145: Memory [  8] read with value: [00000000] | [         0]
+# 
+#                  150: Memory [  8] read with value: [0000000c] | [        12]
+# 
+#                  155: Register [ 5] written with value: [0000000c] | [        12]
 # 
 # ** Note: $stop    : ./tb_top.sv(43)
 #    Time: 510 ns  Iteration: 0  Instance: /tb_top
 # Break in Module tb_top at ./tb_top.sv line 43
-# End time: 17:44:44 on Nov 01,2025, Elapsed time: 0:06:14
+# End time: 09:46:17 on Nov 02,2025, Elapsed time: 0:03:02
 # Errors: 0, Warnings: 2

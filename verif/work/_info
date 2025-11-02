@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/Velton/Documents/projeto_riscV/verif
 vadder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1762029510
+Z2 !s110 1762087395
 !i10b 1
 !s100 J@Bf42a<9Q9R;nJSZl2>B2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1762029510.000000
+Z8 !s108 1762087395.000000
 !s107 ./tb_top.sv|./../design/RISC_V.sv|./../design/Datapath.sv|./../design/instructionmemory.sv|./../design/datamemory.sv|./../design/mux4.sv|./../design/mux2.sv|./../design/imm_Gen.sv|./../design/HazardDetection.sv|./../design/ForwardingUnit.sv|./../design/flopr.sv|./../design/Controller.sv|./../design/BranchUnit.sv|./../design/ALUController.sv|./../design/alu.sv|./../design/RegFile.sv|./../design/RegPack.sv|./../design/Memoria32Data.sv|./../design/Memoria32.sv|./../design/ramOnChipData.v|./../design/ramOnChip32.v|./../design/adder.sv|
 Z9 !s90 -reportprogress|300|-f|compile_verilog|
 !i113 1
@@ -37,17 +37,17 @@ valu
 R1
 R2
 !i10b 1
-!s100 ^;4bJ<??lz7W`l`=Rj?Td0
+!s100 DJem@_T]TIIS:;nNM?WhO0
 R3
-IE`6EVUG0:GGOY<OR9D9Y`2
+Io<:?nhoiC>TgBK4<mU;<Y2
 R4
 S1
 R0
-w1762029437
+w1762087130
 8./../design/alu.sv
 F./../design/alu.sv
 !i122 0
-L0 3 28
+L0 3 30
 R7
 r1
 !s85 0
@@ -61,17 +61,17 @@ vALUController
 R1
 R2
 !i10b 1
-!s100 e@d5g`VQQ9z0_J8d@NhI[0
+!s100 kPTOYjbEN9SH4@of01R0n1
 R3
-I>fgF18OkiEzDnCE30l9SI0
+I>9j=mDTffJ97HNGC>A9fL0
 R4
 S1
 R0
-w1762029433
+w1762087128
 8./../design/ALUController.sv
 F./../design/ALUController.sv
 !i122 0
-L0 3 27
+Z12 L0 3 29
 R7
 r1
 !s85 0
@@ -121,7 +121,7 @@ R5
 8./../design/Controller.sv
 F./../design/Controller.sv
 !i122 0
-Z12 L0 3 35
+Z13 L0 3 35
 R7
 r1
 !s85 0
@@ -158,7 +158,7 @@ R9
 R10
 vDatapath
 R1
-Z13 DXx4 work 16 Pipe_Buf_Reg_PKG 0 22 CP`NR8^c2NX`Y1z<Jz9aB2
+Z14 DXx4 work 16 Pipe_Buf_Reg_PKG 0 22 CP`NR8^c2NX`Y1z<Jz9aB2
 DXx4 work 16 Datapath_sv_unit 0 22 gK[1QCkf2n5n=M6K0GhRR3
 R2
 R4
@@ -171,8 +171,8 @@ I[FcU4Z6AKg`kEhYdYRGFS2
 S1
 R0
 R5
-Z14 8./../design/Datapath.sv
-Z15 F./../design/Datapath.sv
+Z15 8./../design/Datapath.sv
+Z16 F./../design/Datapath.sv
 !i122 0
 L0 5 312
 R7
@@ -185,7 +185,7 @@ R10
 n@datapath
 XDatapath_sv_unit
 R1
-R13
+R14
 R2
 VgK[1QCkf2n5n=M6K0GhRR3
 r1
@@ -197,8 +197,8 @@ IgK[1QCkf2n5n=M6K0GhRR3
 S1
 R0
 R5
-R14
 R15
+R16
 !i122 0
 L0 3 0
 R7
@@ -297,7 +297,7 @@ R5
 8./../design/imm_Gen.sv
 F./../design/imm_Gen.sv
 !i122 0
-L0 3 29
+R12
 R7
 r1
 !s85 0
@@ -346,7 +346,7 @@ R5
 8./../design/Memoria32.sv
 F./../design/Memoria32.sv
 !i122 0
-Z16 L0 26 94
+Z17 L0 26 94
 R7
 r1
 !s85 0
@@ -371,7 +371,7 @@ R5
 8./../design/Memoria32Data.sv
 F./../design/Memoria32Data.sv
 !i122 0
-R16
+R17
 R7
 r1
 !s85 0
@@ -467,7 +467,7 @@ R5
 8./../design/ramOnChip32.v
 F./../design/ramOnChip32.v
 !i122 0
-Z17 L0 40 78
+Z18 L0 40 78
 R7
 r1
 !s85 0
@@ -490,7 +490,7 @@ R5
 8./../design/ramOnChipData.v
 F./../design/ramOnChipData.v
 !i122 0
-R17
+R18
 R7
 r1
 !s85 0
@@ -515,7 +515,7 @@ R5
 8./../design/RegFile.sv
 F./../design/RegFile.sv
 !i122 0
-R12
+R13
 R7
 r1
 !s85 0
