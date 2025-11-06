@@ -13,9 +13,9 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 8 | `BNE`     |     ❌     |   ❌   |     ❌     |
 | 9 | `BLT`     |     ❌     |   ❌   |     ❌     |
 | 10| `BGE`     |     ❌     |   ❌   |     ❌     |
-| 11| `LB`      |     ✅     |   ❌   |     ❌     |
-| 12| `LH`      |     ✅     |   ❌   |     ❌     |
-| 13| `LBU`     |     ✅     |   ❌   |     ❌     |
+| 11| `LB`      |     ✅     |   ✅   |     ✅     |
+| 12| `LH`      |     ✅     |   ✅   |     ✅     |
+| 13| `LBU`     |     ✅     |   ✅   |     ✅     |
 | 14| `SB`      |     ❌     |   ❌   |     ❌     |
 | 15| `SH`      |     ❌     |   ❌   |     ❌     |
 | 16| `SLTI`    |     ❌     |   ❌   |     ❌     |
@@ -23,7 +23,7 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 18| `SLLI`    |     ❌     |   ❌   |     ❌     |
 | 19| `SRLI`    |     ❌     |   ❌   |     ❌     |
 | 20| `SRAI`    |     ❌     |   ❌   |     ❌     |
-| 21| `SUB`     |     ✅     |   ❌   |     ❌     |
+| 21| `SUB`     |     ✅     |   ✅   |     ✅     |
 | 22| `SLT`     |     ❌     |   ❌   |     ❌     |
 | 23| `XOR`     |     ✅     |   ✅   |     ✅     |
 | 24| `OR`      |     ✅     |   ✅   |     ✅     |
