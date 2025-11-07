@@ -16,7 +16,7 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 11| `LB`      |     ✅     |   ✅   |     ✅     |
 | 12| `LH`      |     ✅     |   ✅   |     ✅     |
 | 13| `LBU`     |     ✅     |   ✅   |     ✅     |
-| 14| `SB`      |     ❌     |   ❌   |     ❌     |
+| 14| `SB`      |     ✅     |   ✅   |     ✅     |
 | 15| `SH`      |     ❌     |   ❌   |     ❌     |
 | 16| `SLTI`    |     ❌     |   ❌   |     ❌     |
 | 17| `ADDI`    |     ❌     |   ❌   |     ❌     |
