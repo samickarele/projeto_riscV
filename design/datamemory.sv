@@ -66,9 +66,9 @@ module datamemory #(
         3'b001: begin  // SH
           Datain = {2{wd[15:0]}};
           case (a[1])
-            1'b0: wr = 4'b0011;
-            1'b1: wr = 4'b1100;
-            default: wr = 4'b0000;
+            1'b0: Wr = 4'b0011;
+            1'b1: Wr = 4'b1100;
+            default: Wr = 4'b0000;
           endcase  
         end
         3'b010: begin  // SW
