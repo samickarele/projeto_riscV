@@ -29,6 +29,10 @@ module alu#(
                     ALUResult = SrcA ^ SrcB;
             4'b1100: // slt
                     ALUResult = (SrcA < SrcB) ? 1 : 0;
+            4'b0101: // SRLI
+                    ALUResult = SrcA >> SrcB[4:0];
+            4'b0100: // SLLI
+                    ALUResult = SrcA << SrcB[4:0];
             default:
                     ALUResult = 0;
             endcase
