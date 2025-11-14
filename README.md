@@ -17,12 +17,12 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 12| `LH`      |     ✅     |   ✅   |     ✅     |
 | 13| `LBU`     |     ✅     |   ✅   |     ✅     |
 | 14| `SB`      |     ✅     |   ✅   |     ✅     |
-| 15| `SH`      |     ✅     |   ✅   |     ❌     |
-| 16| `SLTI`    |     ❌     |   ❌   |     ❌     |
+| 15| `SH`      |     ✅     |   ✅   |     ✅     |
+| 16| `SLTI`    |     ✅     |   ✅   |     ✅     |
 | 17| `ADDI`    |     ✅     |   ✅   |     ✅     |
 | 18| `SLLI`    |     ✅     |   ✅   |     ✅     |
 | 19| `SRLI`    |     ✅     |   ✅   |     ✅     |
-| 20| `SRAI`    |     ❌     |   ❌   |     ❌     |
+| 20| `SRAI`    |     ✅     |   ✅   |     ✅     |
 | 21| `SUB`     |     ✅     |   ✅   |     ✅     |
 | 22| `SLT`     |     ✅     |   ✅   |     ✅     |
 | 23| `XOR`     |     ✅     |   ✅   |     ✅     |
