@@ -1,3 +1,4 @@
+
 `timescale 1ns / 1ps
 
 import Pipe_Buf_Reg_PKG::*;
@@ -18,6 +19,7 @@ module Datapath #(
     MemWrite,  // Register file or Immediate MUX // Memroy Writing Enable
     MemRead,  // Memroy Reading Enable
     Branch,  // Branch Enable
+    Jump, //JAL
     input  logic [          1:0] ALUOp,
     input  logic [ALU_CC_W -1:0] ALU_CC,         // ALU Control Code ( input of the ALU )
     output logic [          6:0] opcode,
@@ -45,6 +47,7 @@ module Datapath #(
   logic [DATA_W-1:0] SrcB, ALUResult;
   logic [DATA_W-1:0] ExtImm, BrImm, Old_PC_Four, BrPC;
   logic [DATA_W-1:0] WrmuxSrc;
+  logic [DATA_W-1:0] JAL_ALU; //mux 
   logic PcSel;  // mux select / flush signal
   logic [1:0] FAmuxSel;
   logic [1:0] FBmuxSel;
@@ -141,6 +144,7 @@ module Datapath #(
       B.MemWrite <= 0;
       B.ALUOp <= 0;
       B.Branch <= 0;
+      B.Jump <= 0; //inicializa o jump
       B.Curr_Pc <= 0;
       B.RD_One <= 0;
       B.RD_Two <= 0;
@@ -150,6 +154,7 @@ module Datapath #(
       B.ImmG <= 0;
       B.func3 <= 0;
       B.func7 <= 0;
+      B.PC_quatro <= 0; //inicialzia pc+4
       B.Curr_Instr <= A.Curr_Instr;  //debug tmp
     end else begin
       B.ALUSrc <= ALUsrc;
@@ -159,6 +164,7 @@ module Datapath #(
       B.MemWrite <= MemWrite;
       B.ALUOp <= ALUOp;
       B.Branch <= Branch;
+      B.Jump <= Jump; //propaga
       B.Curr_Pc <= A.Curr_Pc;
       B.RD_One <= Reg1;
       B.RD_Two <= Reg2;
@@ -168,6 +174,7 @@ module Datapath #(
       B.ImmG <= ExtImm;
       B.func3 <= A.Curr_Instr[14:12];
       B.func7 <= A.Curr_Instr[31:25];
+      B.PC_quatro <= {23'b0, A.Curr_Pc} + 32'd4; //PC+4
       B.Curr_Instr <= A.Curr_Instr;  //debug tmp
     end
   end
@@ -221,6 +228,7 @@ module Datapath #(
       B.Curr_Pc,
       B.ImmG,
       B.Branch,
+      B.Jump,
       ALUResult,
       BrImm,
       Old_PC_Four,
@@ -236,6 +244,7 @@ module Datapath #(
       C.MemtoReg <= 0;
       C.MemRead <= 0;
       C.MemWrite <= 0;
+      C.Jump <= 0;
       C.Pc_Imm <= 0;
       C.Pc_Four <= 0;
       C.Imm_Out <= 0;
@@ -244,11 +253,13 @@ module Datapath #(
       C.rd <= 0;
       C.func3 <= 0;
       C.func7 <= 0;
+      C.PC_quatro <= 0;
     end else begin
       C.RegWrite <= B.RegWrite;
       C.MemtoReg <= B.MemtoReg;
       C.MemRead <= B.MemRead;
       C.MemWrite <= B.MemWrite;
+      C.Jump <= B.Jump; 
       C.Pc_Imm <= BrImm;
       C.Pc_Four <= Old_PC_Four;
       C.Imm_Out <= B.ImmG;
@@ -257,6 +268,7 @@ module Datapath #(
       C.rd <= B.rd;
       C.func3 <= B.func3;
       C.func7 <= B.func7;
+      C.PC_quatro <= B.PC_quatro;
       C.Curr_Instr <= B.Curr_Instr;  // debug tmp
     end
   end
@@ -284,28 +296,34 @@ module Datapath #(
         begin
       D.RegWrite <= 0;
       D.MemtoReg <= 0;
+      D.Jump<=0;
       D.Pc_Imm <= 0;
       D.Pc_Four <= 0;
       D.Imm_Out <= 0;
       D.Alu_Result <= 0;
       D.MemReadData <= 0;
       D.rd <= 0;
+      D.PC_quatro<=0;
     end else begin
       D.RegWrite <= C.RegWrite;
       D.MemtoReg <= C.MemtoReg;
+      D.Jump <= C.Jump;
       D.Pc_Imm <= C.Pc_Imm;
       D.Pc_Four <= C.Pc_Four;
       D.Imm_Out <= C.Imm_Out;
       D.Alu_Result <= C.Alu_Result;
       D.MemReadData <= ReadData;
       D.rd <= C.rd;
+      D.PC_quatro <= C.PC_quatro;
       D.Curr_Instr <= C.Curr_Instr;  //Debug Tmp
     end
   end
 
+  assign JAL_ALU = D.Jump ? D.PC_quatro : D.Alu_Result;
+
   //--// The LAST Block
   mux2 #(32) resmux (
-      D.Alu_Result,
+      JAL_ALU,
       D.MemReadData,
       D.MemtoReg,
       WrmuxSrc
