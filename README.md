@@ -10,9 +10,9 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 5 | `AND`     |     ✅     |   ✅   |     ✅     |
 | 6 | `JAL`     |     ✅     |   ✅   |     ✅     |
 | 7 | `JALR`    |     ❌     |   ❌   |     ❌     |
-| 8 | `BNE`     |     ❌     |   ❌   |     ❌     |
-| 9 | `BLT`     |     ❌     |   ❌   |     ❌     |
-| 10| `BGE`     |     ❌     |   ❌   |     ❌     |
+| 8 | `BNE`     |     ✅     |   ✅   |     ✅     |
+| 9 | `BLT`     |     ✅     |   ✅   |     ✅     |
+| 10| `BGE`     |     ✅     |   ✅   |     ✅     |
 | 11| `LB`      |     ✅     |   ✅   |     ✅     |
 | 12| `LH`      |     ✅     |   ✅   |     ✅     |
 | 13| `LBU`     |     ✅     |   ✅   |     ✅     |
