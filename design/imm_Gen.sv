@@ -27,6 +27,16 @@ module imm_Gen (
         1'b0
       };
 
+      7'b1101111:   //(JAL)
+      Imm_out = {
+        inst_code[31] ? 11'h7FF : 11'b0,  // sign extension
+        inst_code[31],      // bit [20]
+        inst_code[19:12],   // bits [19:12]
+        inst_code[20],      // bit [11]
+        inst_code[30:21],   // bits [10:1]
+        1'b0                // bit [0] sempre 0
+      };
+
       default: Imm_out = {32'b0};
 
     endcase
