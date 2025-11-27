@@ -14,6 +14,7 @@ package Pipe_Buf_Reg_PKG;
     logic        MemWrite;
     logic [1:0]  ALUOp;
     logic        Branch;
+    logic Jump; //JAL
     logic [8:0]  Curr_Pc;
     logic [31:0] RD_One;
     logic [31:0] RD_Two;
@@ -23,6 +24,7 @@ package Pipe_Buf_Reg_PKG;
     logic [31:0] ImmG;
     logic [2:0]  func3;
     logic [6:0]  func7;
+    logic[31:0] PC_quatro; //CALCULA E SALVA PC+4 QUE EH O ENDERECO DE RETORNO
     logic [31:0] Curr_Instr;
   } id_ex_reg;
 
@@ -32,6 +34,7 @@ package Pipe_Buf_Reg_PKG;
     logic        MemtoReg;
     logic        MemRead;
     logic        MemWrite;
+    logic Jump; //JAL
     logic [31:0] Pc_Imm;
     logic [31:0] Pc_Four;
     logic [31:0] Imm_Out;
@@ -40,6 +43,7 @@ package Pipe_Buf_Reg_PKG;
     logic [4:0]  rd;
     logic [2:0]  func3;
     logic [6:0]  func7;
+    logic [31:0] PC_quatro; //propaga PC_quatro
     logic [31:0] Curr_Instr;
   } ex_mem_reg;
 
@@ -47,12 +51,14 @@ package Pipe_Buf_Reg_PKG;
   typedef struct packed {
     logic        RegWrite;
     logic        MemtoReg;
+    logic Jump; //JAL
     logic [31:0] Pc_Imm;
     logic [31:0] Pc_Four;
     logic [31:0] Imm_Out;
     logic [31:0] Alu_Result;
     logic [31:0] MemReadData;
     logic [4:0]  rd;
+    logic [31:0] PC_quatro; //writeback valor de retorno
     logic [31:0] Curr_Instr;
   } mem_wb_reg;
 endpackage
