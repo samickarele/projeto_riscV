@@ -27,6 +27,12 @@ module alu#(
                     ALUResult = SrcA | SrcB;
             4'b1001: // XOR
                     ALUResult = SrcA ^ SrcB;
+            4'b1010: // BNE
+                    ALUResult = (SrcA != SrcB) ? 1 : 0;
+            4'b1110: // BLT
+                    ALUResult = ($signed(SrcA) < $signed(SrcB)) ? 1 : 0;
+            4'b1101: // BGE
+                    ALUResult = ($signed(SrcA) >= $signed(SrcB)) ? 1 : 0;
             4'b1100: // slt e slti
                     ALUResult = ($signed(SrcA) < $signed(SrcB)) ? 1 : 0; // coloquei o signed pra garantir
             4'b0101: // SRLI
