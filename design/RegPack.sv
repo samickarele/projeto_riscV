@@ -15,6 +15,7 @@ package Pipe_Buf_Reg_PKG;
     logic [1:0]  ALUOp;
     logic        Branch;
     logic Jump; //JAL
+    logic JumpReg; // Jalr
     logic [8:0]  Curr_Pc;
     logic [31:0] RD_One;
     logic [31:0] RD_Two;
@@ -35,6 +36,7 @@ package Pipe_Buf_Reg_PKG;
     logic        MemRead;
     logic        MemWrite;
     logic Jump; //JAL
+    logic JumpReg; //Jalr
     logic [31:0] Pc_Imm;
     logic [31:0] Pc_Four;
     logic [31:0] Imm_Out;
