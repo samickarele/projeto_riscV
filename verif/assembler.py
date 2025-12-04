@@ -31,6 +31,12 @@ import os
 BITS_IN_CHUNK = 8
 
 INSTRUCTION = {
+ "halt": {
+ "format": "N", #none(sem tipo)
+  "opcode": "1110011",
+  "funct3": "000",
+  "funct7": "0000000"
+ },
  "lui": {
   "format": "U",
   "opcode": "0110111",
@@ -361,9 +367,14 @@ def check_immediate(immediate, length):
 # translates an instruction to binary (assembly to machine code)
 def translate_instruction(instruction):
 	try:
+		instruction = instruction.strip()
+		
 		instr = instruction.split(" ")[0]
 
 		check_instruction(instr)
+
+		if instr == "halt":
+			return "00000000000000000000000001110011"
 
 		opcode = INSTRUCTION[instr]["opcode"]
 		funct3 = INSTRUCTION[instr]["funct3"]
