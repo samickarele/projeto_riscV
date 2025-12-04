@@ -21,6 +21,7 @@ module Datapath #(
     Branch,  // Branch Enable
     Jump, //JAL
     JumpReg, //Jalr
+    Halt,
     input  logic [          1:0] ALUOp,
     input  logic [ALU_CC_W -1:0] ALU_CC,         // ALU Control Code ( input of the ALU )
     output logic [          6:0] opcode,
@@ -61,6 +62,9 @@ module Datapath #(
   ex_mem_reg C;
   mem_wb_reg D;
 
+  logic PC_stop;
+  assign PC_stop = Reg_Stall | Halt; //se houver hazard ele para ou se for halt ele para
+
   // next PC
   adder #(9) pcadd (
       PC,
@@ -77,7 +81,7 @@ module Datapath #(
       clk,
       reset,
       Next_PC,
-      Reg_Stall,
+      PC_stop,
       PC
   );
   instructionmemory instr_mem (
@@ -93,7 +97,7 @@ module Datapath #(
       A.Curr_Pc <= 0;
       A.Curr_Instr <= 0;
     end
-        else if (!Reg_Stall)    // stall
+        else if (!Reg_Stall && !PC_stop)    // stall ou o halt
         begin
       A.Curr_Pc <= PC;
       A.Curr_Instr <= Instr;

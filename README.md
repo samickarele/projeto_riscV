@@ -9,7 +9,7 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 4 | `ADD`     |     ✅     |   ✅   |     ✅     |
 | 5 | `AND`     |     ✅     |   ✅   |     ✅     |
 | 6 | `JAL`     |     ✅     |   ✅   |     ✅     |
-| 7 | `JALR`    |     ❌     |   ❌   |     ❌     |
+| 7 | `JALR`    |     ✅     |   ✅   |     ✅     |
 | 8 | `BNE`     |     ✅     |   ✅   |     ✅     |
 | 9 | `BLT`     |     ✅     |   ✅   |     ✅     |
 | 10| `BGE`     |     ✅     |   ✅   |     ✅     |
@@ -27,4 +27,4 @@ Projeto da cadeira de organização e arquitetura de computadores do centro de i
 | 22| `SLT`     |     ✅     |   ✅   |     ✅     |
 | 23| `XOR`     |     ✅     |   ✅   |     ✅     |
 | 24| `OR`      |     ✅     |   ✅   |     ✅     |
-| 25| `HALT`    |     ❌     |   ❌   |     ❌     |
+| 25| `HALT`    |     ✅     |   ✅   |     ✅     |
