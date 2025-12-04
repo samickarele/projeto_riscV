@@ -42,5 +42,5 @@ module Controller (
   assign Branch = (Opcode == BR);
   assign Jump = (Opcode == JAL || Opcode == JALR);
   assign JumpReg = (Opcode == JALR);
-  assign Halt = (Opcode == 7'b1110011);
+  assign Halt = (Opcode == 7'b1111111);
 endmodule
