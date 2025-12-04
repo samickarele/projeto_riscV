@@ -33,7 +33,7 @@ BITS_IN_CHUNK = 8
 INSTRUCTION = {
  "halt": {
  "format": "N", #none(sem tipo)
-  "opcode": "1110011",
+  "opcode": "1111111",
   "funct3": "000",
   "funct7": "0000000"
  },
@@ -374,7 +374,7 @@ def translate_instruction(instruction):
 		check_instruction(instr)
 
 		if instr == "halt":
-			return "00000000000000000000000001110011"
+			return "00000000000000000000000001111111"
 
 		opcode = INSTRUCTION[instr]["opcode"]
 		funct3 = INSTRUCTION[instr]["funct3"]
